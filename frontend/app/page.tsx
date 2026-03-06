@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import './globals.css'
-import { Code, BookOpen, Terminal, Key, Globe, UserPlus, Edit, MessageSquare, BarChart2 } from 'lucide-react'
+import { Code, BookOpen, Terminal, Key, Globe, UserPlus, Edit, MessageSquare, BarChart2, Users } from 'lucide-react'
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('live-demo')
@@ -32,21 +32,21 @@ export default function Home() {
   }
 
   return (
-    <div style={{ 
-      backgroundColor: '#000', 
-      color: '#fff', 
+    <div style={{
+      backgroundColor: '#000',
+      color: '#fff',
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column'
     }}>
       {/* Top Banner */}
-      <div style={{ 
-        backgroundColor: '#000', 
-        borderBottom: '1px solid #333', 
-        padding: '15px 20px', 
-        display: 'flex', 
-        justifyContent: 'space-between', 
+      <div style={{
+        backgroundColor: '#000',
+        borderBottom: '1px solid #333',
+        padding: '15px 20px',
+        display: 'flex',
+        justifyContent: 'space-between',
         alignItems: 'center'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -62,75 +62,97 @@ export default function Home() {
           </a>
         </div>
       </div>
-      
+
       {/* Main Content */}
       <div style={{ flex: 1, display: 'flex' }}>
         {/* Left Sidebar - Navigation */}
-        <div style={{ 
-          width: '280px', 
-          backgroundColor: '#111', 
-          padding: '30px 20px', 
+        <div style={{
+          width: '280px',
+          backgroundColor: '#111',
+          padding: '30px 20px',
           borderRight: '1px solid #333',
           overflowY: 'auto',
           height: 'calc(100vh - 70px)'
         }}>
           <h2 style={{ color: '#FAA305', marginBottom: '25px', fontSize: '1.3em' }}>Documentation</h2>
-          
+
           <nav style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <button 
-              onClick={() => setActiveSection('overview')} 
-              style={{ 
-                padding: '12px 15px', 
-                backgroundColor: activeSection === 'overview' ? '#FAA305' : 'transparent', 
-                color: activeSection === 'overview' ? '#000' : '#ccc', 
-                border: 'none', 
-                borderRadius: '8px', 
-                textAlign: 'left', 
-                fontWeight: '500', 
-                cursor: 'pointer', 
-                display: 'flex', 
-                alignItems: 'center', 
+            <button
+              onClick={() => setActiveSection('overview')}
+              style={{
+                padding: '12px 15px',
+                backgroundColor: activeSection === 'overview' ? '#FAA305' : 'transparent',
+                color: activeSection === 'overview' ? '#000' : '#ccc',
+                border: 'none',
+                borderRadius: '8px',
+                textAlign: 'left',
+                fontWeight: '500',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
                 gap: '10px',
                 transition: 'all 0.2s'
               }}>
               <BookOpen size={18} /> Overview
             </button>
-            
-            <button 
-              onClick={() => setActiveSection('authentication')} 
-              style={{ 
-                padding: '12px 15px', 
-                backgroundColor: activeSection === 'authentication' ? '#FAA305' : 'transparent', 
-                color: activeSection === 'authentication' ? '#000' : '#ccc', 
-                border: 'none', 
-                borderRadius: '8px', 
-                textAlign: 'left', 
-                fontWeight: '500', 
-                cursor: 'pointer', 
-                display: 'flex', 
-                alignItems: 'center', 
+
+            <button
+              onClick={() => setActiveSection('authentication')}
+              style={{
+                padding: '12px 15px',
+                backgroundColor: activeSection === 'authentication' ? '#FAA305' : 'transparent',
+                color: activeSection === 'authentication' ? '#000' : '#ccc',
+                border: 'none',
+                borderRadius: '8px',
+                textAlign: 'left',
+                fontWeight: '500',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
                 gap: '10px',
                 transition: 'all 0.2s'
               }}>
               <Key size={18} /> Authentication
             </button>
-            
-            <button 
-              onClick={() => setActiveSection('endpoints')} 
-              style={{ 
-                padding: '12px 15px', 
-                backgroundColor: activeSection === 'endpoints' ? '#FAA305' : 'transparent', 
-                color: activeSection === 'endpoints' ? '#000' : '#ccc', 
-                border: 'none', 
-                borderRadius: '8px', 
-                textAlign: 'left', 
-                fontWeight: '500', 
-                cursor: 'pointer', 
-                display: 'flex', 
-                alignItems: 'center', 
+
+            <button  
+              onClick={() => setActiveSection('endpoints')}  
+              style={{  
+                padding: '12px 15px',  
+                backgroundColor: activeSection === 'endpoints' ? '#FAA305' : 'transparent',  
+                color: activeSection === 'endpoints' ? '#000' : '#ccc',  
+                border: 'none',  
+                borderRadius: '8px',  
+                textAlign: 'left',  
+                fontWeight: '500',  
+                cursor: 'pointer',  
+                display: 'flex',  
+                alignItems: 'center',  
                 gap: '10px',
-                transition: 'all 0.2s'
-              }}>
-              <Terminal size={18} /> Endpoints
+                transition: 'all 0.2s'  
+              }}>  
+              <Terminal size={18} /> Endpoints  
             </button>
             
+            <a  
+              href="/cooperation-exercise"  
+              style={{  
+                padding: '12px 15px',  
+                backgroundColor: 'transparent',  
+                color: '#ccc',  
+                border: 'none',  
+                borderRadius: '8px',  
+                textAlign: 'left',  
+                fontWeight: '500',  
+                cursor: 'pointer',  
+                display: 'flex',  
+                alignItems: 'center',  
+                gap: '10px',
+                transition: 'all 0.2s',
+                textDecoration: 'none'  
+              }}  
+              onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#333'}  
+              onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>  
+              <Users size={18} /> Cooperation Exercise  
+            </a>
+
