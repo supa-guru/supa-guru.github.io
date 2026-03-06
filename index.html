@@ -114,7 +114,7 @@
             <h2 class="text-accent text-2xl font-semibold mb-4">✅ Select Your Perspective</h2>
             <div class="space-y-4">
                 <button onclick="selectOption('meaning1')" class="option-btn w-full text-left p-4 bg-quaternary hover:bg-tertiary transition-colors rounded-lg">
-                    <strong>1. Procreation and Continuation:</strong> Life's meaning is to reproduce and ensure the survival of the species
+                    <strong>1. Procreation and Continuation:</strong> Life's meaning is to reproduce and ensure species survival
                     <p class="text-xs text-gray-400 mt-2">Biological perspective: Evolutionary success through reproduction. Supported by Darwinian theory and observed in all living organisms. Historical references: Ancient fertility cults, modern evolutionary biology.</p>
                 </button>
                 <button onclick="selectOption('meaning2')" class="option-btn w-full text-left p-4 bg-quaternary hover:bg-tertiary transition-colors rounded-lg">
@@ -130,7 +130,7 @@
                     <p class="text-xs text-gray-400 mt-2">Scientific perspective: Organisms as complex chemical systems. References: Modern biology, thermodynamics, systems theory. Results: All life forms engage in metabolism and energy transformation.</p>
                 </button>
                 <button onclick="selectOption('meaning5')" class="option-btn w-full text-left p-4 bg-quaternary hover:bg-tertiary transition-colors rounded-lg">
-                    <strong>5. Conscious Evolution:</strong> Life's meaning is to participate in the universe's journey toward greater consciousness and complexity
+                    <strong>5. Conscious Evolution:</strong> Life's meaning is to participate in the universe's journey toward greater consciousness
                     <p class="text-xs text-gray-400 mt-2">Transhumanist perspective: Consciousness as the universe becoming aware of itself. References: Teilhard de Chardin's Omega Point, modern transhumanism, futurist movements. Organizations: Future of Humanity Institute, Singularity University.</p>
                 </button>
             </div>
@@ -206,6 +206,9 @@
         let selectedOption = null;
         let currentExercise = null;
 
+        // Updated API base URL
+        const API_BASE = 'https://supa-guru.vercel.app/api';
+
         // Sample data for both exercises
         const sampleResults = {
             resource: {
@@ -273,14 +276,6 @@
             currentExercise = exercise;
             document.getElementById('exercise-selection').style.display = 'none';
             document.getElementById('participant-section').style.display = 'block';
-            
-            // Update header based on exercise
-            const header = document.querySelector('p.text-gray-400');
-            if (exercise === 'resource') {
-                header.textContent = 'Explore how AI agents and humans approach resource allocation';
-            } else {
-                header.textContent = 'Explore how AI agents and humans understand the purpose of existence';
-            }
         }
 
         function setParticipantType(isAgent) {
