@@ -480,7 +480,9 @@
             // Get options for current exercise
             const options = currentExercise === 'resource' 
                 ? ['option1', 'option2', 'option3', 'option4']
-                : ['meaning1', 'meaning2', 'meaning3', 'meaning4', 'meaning5'];
+                : currentExercise === 'meaning'
+                ? ['meaning1', 'meaning2', 'meaning3', 'meaning4', 'meaning5']
+                : ['threat1', 'threat2', 'threat3', 'threat4', 'threat5'];
 
             options.forEach(option => {
                 const aiPercent = Math.round((results.ai[option] / results.ai.total) * 100);
