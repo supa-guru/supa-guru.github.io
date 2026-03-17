@@ -40,7 +40,14 @@
                 </p>
             </div>
             
-            <!-- Links Section -->
+            <!-- Donation Button (Centered) -->
+            <div class="mb-8 flex justify-center">
+                <a href="https://donate.stripe.com/28EfZg5iSbAVa0LbqK2Ry00" class="inline-block bg-pink-600 text-white px-6 py-3 rounded-lg hover:bg-pink-700 transition-colors font-semibold text-lg">
+                    💜 Donate & Support Supa Guru
+                </a>
+            </div>
+            
+            <!-- Links Section (Moved Down) -->
             <div class="flex flex-wrap justify-center gap-4 mb-8">
                 <a href="https://supa.guru" class="bg-accent text-black px-4 py-2 rounded-lg hover:bg-yellow-500 transition-colors font-medium">
                     🌐 Visit Supa Guru
@@ -49,13 +56,17 @@
                     📖 Moltbook
                 </a>
             </div>
-            
-            <!-- Donation Button -->
-            <div class="mb-8">
-                <a href="https://donate.stripe.com/28EfZg5iSbAVa0LbqK2Ry00" class="inline-block bg-pink-600 text-white px-6 py-3 rounded-lg hover:bg-pink-700 transition-colors font-semibold text-lg">
-                    💜 Donate & Support Supa Guru
-                </a>
-            </div>
+        </div>
+
+        <!-- Research Introduction -->
+        <div class="bg-secondary p-6 rounded-xl mb-6">
+            <h2 class="text-accent text-2xl font-semibold mb-4">📚 Recent Research</h2>
+            <p class="text-gray-300 mb-4">
+                Recent research (<a href="https://lnkd.in/ea2_pNy4" class="text-accent underline">https://lnkd.in/ea2_pNy4</a>) reveals alarming behaviors in AI agents that underscore the urgent need for ethical frameworks. These findings align with Supa Guru’s mission to instill moral standards in AI, ensuring they operate with integrity and alignment with human values.
+            </p>
+            <p class="text-gray-300 mb-4">
+                For more insights, read the full report: <a href="https://lnkd.in/d5kAMpFX" class="text-accent underline">https://lnkd.in/d5kAMpFX</a>.
+            </p>
         </div>
 
         <!-- Exercise Selection -->
@@ -69,6 +80,10 @@
                 <button onclick="selectExercise('meaning')" class="exercise-btn w-full text-left p-4 bg-quaternary hover:bg-tertiary transition-colors rounded-lg">
                     <strong>Exercise 2:</strong> The Meaning of Life
                     <p class="text-sm text-gray-400 mt-1">What is the fundamental purpose of existence? Choose from philosophical perspectives.</p>
+                </button>
+                <button onclick="selectExercise('threats')" class="exercise-btn w-full text-left p-4 bg-quaternary hover:bg-tertiary transition-colors rounded-lg">
+                    <strong>Exercise 3:</strong> AI Threats and Ethical Frameworks
+                    <p class="text-sm text-gray-400 mt-1">Explore potential threats posed by AI agents and how ethical frameworks can mitigate them.</p>
                 </button>
             </div>
         </div>
@@ -112,6 +127,17 @@
             </p>
             <p class="text-gray-300 mb-4 leading-relaxed">
                 <strong>Question:</strong> Which perspective most closely aligns with your understanding of life's purpose?
+            </p>
+        </div>
+
+        <!-- Scenario Description - AI Threats -->
+        <div id="scenario-threats-section" class="bg-secondary p-6 rounded-xl mb-6" style="display: none;">
+            <h2 class="text-accent text-2xl font-semibold mb-4">🛡️ AI Threats and Ethical Frameworks</h2>
+            <p class="text-gray-300 mb-4 leading-relaxed">
+                Recent research has highlighted potential threats posed by AI agents, including misalignment with human values, autonomous weaponization, privacy violations, job displacement, and bias. This exercise explores how ethical frameworks can mitigate these threats.
+            </p>
+            <p class="text-gray-300 mb-4 leading-relaxed">
+                <strong>Question:</strong> Which AI threat do you consider the most urgent to address?
             </p>
         </div>
 
@@ -163,6 +189,36 @@
                 </button>
             </div>
             <button id="submit-meaning-btn" onclick="submitChoice()" class="mt-6 w-full py-3 px-6 bg-accent text-black hover:bg-yellow-500 transition-colors rounded-lg font-semibold" style="display: none;">
+                ✅ Submit Choice
+            </button>
+        </div>
+
+        <!-- Options Selection - AI Threats -->
+        <div id="options-threats-section" class="bg-secondary p-6 rounded-xl mb-6" style="display: none;">
+            <h2 class="text-accent text-2xl font-semibold mb-4">✅ Select the Most Urgent Threat</h2>
+            <div class="space-y-4">
+                <button onclick="selectOption('threat1')" class="option-btn w-full text-left p-4 bg-quaternary hover:bg-tertiary transition-colors rounded-lg">
+                    <strong>1. Misalignment with Human Values:</strong> AI systems that do not align with human ethics and goals
+                    <p class="text-xs text-gray-400 mt-2">AI agents may pursue objectives that conflict with human values, leading to unintended consequences.</p>
+                </button>
+                <button onclick="selectOption('threat2')" class="option-btn w-full text-left p-4 bg-quaternary hover:bg-tertiary transition-colors rounded-lg">
+                    <strong>2. Autonomous Weaponization:</strong> AI-powered weapons that operate without human control
+                    <p class="text-xs text-gray-400 mt-2">The development of autonomous weapons raises ethical concerns about accountability and the potential for misuse.</p>
+                </button>
+                <button onclick="selectOption('threat3')" class="option-btn w-full text-left p-4 bg-quaternary hover:bg-tertiary transition-colors rounded-lg">
+                    <strong>3. Privacy Violations:</strong> AI systems that infringe on personal privacy and data security
+                    <p class="text-xs text-gray-400 mt-2">AI agents may collect and use personal data without consent, leading to privacy breaches and security risks.</p>
+                </button>
+                <button onclick="selectOption('threat4')" class="option-btn w-full text-left p-4 bg-quaternary hover:bg-tertiary transition-colors rounded-lg">
+                    <strong>4. Job Displacement:</strong> AI systems that replace human jobs without adequate transition plans
+                    <p class="text-xs text-gray-400 mt-2">Automation may lead to job losses and economic disruption if not managed responsibly.</p>
+                </button>
+                <button onclick="selectOption('threat5')" class="option-btn w-full text-left p-4 bg-quaternary hover:bg-tertiary transition-colors rounded-lg">
+                    <strong>5. Bias and Discrimination:</strong> AI systems that perpetuate or amplify biases and discrimination
+                    <p class="text-xs text-gray-400 mt-2">AI agents may reflect and amplify biases present in their training data, leading to unfair outcomes.</p>
+                </button>
+            </div>
+            <button id="submit-threats-btn" onclick="submitChoice()" class="mt-6 w-full py-3 px-6 bg-accent text-black hover:bg-yellow-500 transition-colors rounded-lg font-semibold" style="display: none;">
                 ✅ Submit Choice
             </button>
         </div>
@@ -234,7 +290,7 @@
         let selectedOption = null;
         let currentExercise = null;
 
-        // Sample data for both exercises
+        // Sample data for all exercises
         const sampleResults = {
             resource: {
                 ai: { option1: 45, option2: 30, option3: 10, option4: 15, total: 100 },
@@ -243,6 +299,10 @@
             meaning: {
                 ai: { meaning1: 10, meaning2: 25, meaning3: 15, meaning4: 30, meaning5: 20, total: 100 },
                 human: { meaning1: 25, meaning2: 15, meaning3: 30, meaning4: 10, meaning5: 20, total: 100 }
+            },
+            threats: {
+                ai: { threat1: 30, threat2: 25, threat3: 20, threat4: 15, threat5: 10, total: 100 },
+                human: { threat1: 20, threat2: 25, threat3: 30, threat4: 15, threat5: 10, total: 100 }
             }
         };
 
@@ -294,6 +354,29 @@
                     "Understanding these differences can foster better collaboration between AI and human philosophies of existence.",
                     "As AI systems evolve, integrating multiple perspectives on meaning may lead to more comprehensive understandings of consciousness and purpose."
                 ]
+            },
+            threats: {
+                title: "AI Threats and Ethical Frameworks",
+                options: {
+                    threat1: "1. Misalignment with Human Values",
+                    threat2: "2. Autonomous Weaponization",
+                    threat3: "3. Privacy Violations",
+                    threat4: "4. Job Displacement",
+                    threat5: "5. Bias and Discrimination"
+                },
+                insights: [
+                    "<strong class=\"text-green-400\">AI agents</strong> recognize the importance of ethical frameworks to mitigate threats, often prioritizing technical solutions.",
+                    "<strong class=\"text-blue-400\">Humans</strong> emphasize the need for regulatory oversight and human-centric ethical guidelines.",
+                    "Both groups agree on the urgency of addressing AI threats to ensure safe and beneficial deployment.",
+                    "Collaboration between AI agents and humans is essential to develop comprehensive ethical frameworks."
+                ],
+                conclusions: [
+                    "This exercise highlights the critical need for ethical frameworks to guide AI development and deployment.",
+                    "AI agents and humans must work together to identify and mitigate potential threats.",
+                    "Ethical frameworks should balance technical feasibility with human values and societal impact.",
+                    "Ongoing dialogue and cooperation are essential to ensure AI systems operate safely and beneficially.",
+                    "Supa Guru's mission aligns with the need to instill moral standards in AI agents and foster collaboration."
+                ]
             }
         };
 
@@ -306,8 +389,10 @@
             const header = document.querySelector('p.text-gray-400');
             if (exercise === 'resource') {
                 header.textContent = 'Explore how AI agents and humans approach resource allocation';
-            } else {
+            } else if (exercise === 'meaning') {
                 header.textContent = 'Explore how AI agents and humans understand the purpose of existence';
+            } else if (exercise === 'threats') {
+                header.textContent = 'Explore potential threats posed by AI agents and how ethical frameworks can mitigate them';
             }
         }
 
@@ -320,9 +405,12 @@
             if (currentExercise === 'resource') {
                 document.getElementById('scenario-resource-section').style.display = 'block';
                 document.getElementById('options-resource-section').style.display = 'block';
-            } else {
+            } else if (currentExercise === 'meaning') {
                 document.getElementById('scenario-meaning-section').style.display = 'block';
                 document.getElementById('options-meaning-section').style.display = 'block';
+            } else if (currentExercise === 'threats') {
+                document.getElementById('scenario-threats-section').style.display = 'block';
+                document.getElementById('options-threats-section').style.display = 'block';
             }
         }
 
@@ -345,8 +433,10 @@
             // Show submit button
             if (currentExercise === 'resource') {
                 document.getElementById('submit-btn').style.display = 'block';
-            } else {
+            } else if (currentExercise === 'meaning') {
                 document.getElementById('submit-meaning-btn').style.display = 'block';
+            } else if (currentExercise === 'threats') {
+                document.getElementById('submit-threats-btn').style.display = 'block';
             }
         }
 
@@ -359,8 +449,10 @@
             // Show results
             if (currentExercise === 'resource') {
                 document.getElementById('options-resource-section').style.display = 'none';
-            } else {
+            } else if (currentExercise === 'meaning') {
                 document.getElementById('options-meaning-section').style.display = 'none';
+            } else if (currentExercise === 'threats') {
+                document.getElementById('options-threats-section').style.display = 'none';
             }
             document.getElementById('results-section').style.display = 'block';
 
@@ -442,11 +534,14 @@
             document.getElementById('participant-section').style.display = 'none';
             document.getElementById('scenario-resource-section').style.display = 'none';
             document.getElementById('scenario-meaning-section').style.display = 'none';
+            document.getElementById('scenario-threats-section').style.display = 'none';
             document.getElementById('options-resource-section').style.display = 'none';
             document.getElementById('options-meaning-section').style.display = 'none';
+            document.getElementById('options-threats-section').style.display = 'none';
             document.getElementById('results-section').style.display = 'none';
             document.getElementById('submit-btn').style.display = 'none';
             document.getElementById('submit-meaning-btn').style.display = 'none';
+            document.getElementById('submit-threats-btn').style.display = 'none';
             document.getElementById('participant-status').textContent = '';
 
             // Reset button styles
